@@ -1,0 +1,93 @@
+Os parâmetros para que a simulação ocorra com carga alta:
+
+- 2 pista e 2 fingers;
+- Tempo de pouso = 7 min;
+- Tempo de decolagem = 8 min;
+- Tempo de embarque/desembarque = 20 min;
+- Tempo de abastecimento = 15 min;
+- Quantidade de aviões inicial = 6;
+- Tempo de chegada/ spawn de novos aviões = 20 min
+
+---------------------
+
+(.python) maricimara98@pop-os:~/Público/simulacao-aeroporto$ python main.py
+Simulador Aeroporto
+Aviões atendidos pelo sistema: 75
+Throughput do sistema: 3.12 aviões/h
+Tempo médio em solo: 32.43 min
+Utilização da pista 0: 0.22
+Utilização da pista 1: 0.15
+Utilização do finger 0: 0.53
+Utilização do finger 1: 0.51
+Utilização da bomba de combustivel: 0.55
+
+Tempo médio de espera na fila de pouso: 0.59 min
+Tempo médio de espera na fila de decolagem: 0.08 min
+Tempo médio de espera na fila para acesso a pista: 0.33 min
+Tempo médio de espera na fila de desembarque: 1.33 min
+Tempo médio de espera na fila de abastecimento: 0.58 min
+(.python) maricimara98@pop-os:~/Público/simulacao-aeroporto$ python main.py
+Simulador Aeroporto
+Aviões atendidos pelo sistema: 76
+Throughput do sistema: 3.17 aviões/h
+Tempo médio em solo: 30.46 min
+Utilização da pista 0: 0.19
+Utilização da pista 1: 0.17
+Utilização do finger 0: 0.53
+Utilização do finger 1: 0.53
+Utilização da bomba de combustivel: 0.48
+
+Tempo médio de espera na fila de pouso: 0.57 min
+Tempo médio de espera na fila de decolagem: 0.08 min
+Tempo médio de espera na fila para acesso a pista: 0.32 min
+Tempo médio de espera na fila de desembarque: 0.80 min
+Tempo médio de espera na fila de abastecimento: 0.83 min
+(.python) maricimara98@pop-os:~/Público/simulacao-aeroporto$ python main.py
+Simulador Aeroporto
+Aviões atendidos pelo sistema: 74
+Throughput do sistema: 3.08 aviões/h
+Tempo médio em solo: 31.22 min
+Utilização da pista 0: 0.19
+Utilização da pista 1: 0.17
+Utilização do finger 0: 0.51
+Utilização do finger 1: 0.51
+Utilização da bomba de combustivel: 0.46
+
+Tempo médio de espera na fila de pouso: 0.58 min
+Tempo médio de espera na fila de decolagem: 0.18 min
+Tempo médio de espera na fila para acesso a pista: 0.38 min
+Tempo médio de espera na fila de desembarque: 0.36 min
+Tempo médio de espera na fila de abastecimento: 2.95 min
+(.python) maricimara98@pop-os:~/Público/simulacao-aeroporto$ python main.py
+Simulador Aeroporto
+Aviões atendidos pelo sistema: 74
+Throughput do sistema: 3.08 aviões/h
+Tempo médio em solo: 32.16 min
+Utilização da pista 0: 0.22
+Utilização da pista 1: 0.14
+Utilização do finger 0: 0.51
+Utilização do finger 1: 0.51
+Utilização da bomba de combustivel: 0.50
+
+Tempo médio de espera na fila de pouso: 0.58 min
+Tempo médio de espera na fila de decolagem: 0.12 min
+Tempo médio de espera na fila para acesso a pista: 0.35 min
+Tempo médio de espera na fila de desembarque: 0.85 min
+Tempo médio de espera na fila de abastecimento: 2.25 min
+(.python) maricimara98@pop-os:~/Público/simulacao-aeroporto$ python main.py
+Simulador Aeroporto
+Aviões atendidos pelo sistema: 75
+Throughput do sistema: 3.12 aviões/h
+Tempo médio em solo: 32.43 min
+Utilização da pista 0: 0.22
+Utilização da pista 1: 0.15
+Utilização do finger 0: 0.53
+Utilização do finger 1: 0.51
+Utilização da bomba de combustivel: 0.55
+
+Tempo médio de espera na fila de pouso: 0.59 min
+Tempo médio de espera na fila de decolagem: 0.08 min
+Tempo médio de espera na fila para acesso a pista: 0.33 min
+Tempo médio de espera na fila de desembarque: 1.33 min
+Tempo médio de espera na fila de abastecimento: 0.58 min
+(.python) maricimara98@pop-os:~/Público/simulacao-aeroporto$ 
