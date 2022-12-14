@@ -21,5 +21,4 @@ graficamente.
 ## Requisitos
 
 O cenário descrito deve ser simulado utilizando-se o SimPy.
-Para exemplos e tutoriais sobre o simulador SimPy, acesse:
-http://www.deinf.ufma.br/~mario/grad/avaldes/avaldes.html.# simulacao-aeroporto
+Para exemplos e tutoriais sobre o simulador SimPy, acesse: [Dicas sobre o Simpy](http://www.deinf.ufma.br/~mario/grad/avaldes/avaldes.html.)
