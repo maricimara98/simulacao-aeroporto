@@ -29,9 +29,7 @@ def aviaoProc(env, nome, aeroporto):
         'bomba de combustivel': None,
     }
 
-    global LOG_VERBOSE
-
-# ---------------- Pouso ----------------
+    # ---------------- Pouso ----------------
     # FILA
     if LOG_VERBOSE:
         print('%s em primeiro contato com o aeroporto às %.2f. Aguardando autorização de pouso.' % (
@@ -120,15 +118,10 @@ def aviaoProc(env, nome, aeroporto):
 
     # Registrar métricas
     aeroporto.registrar_metrica(log_simulacao)
-    pass
 
 
 def configura_aeroporto(env, aeroporto, tempo_spawn, qtd_avioes, qtd_pistas, qtd_fingers, qtd_bombas):
 
-    global TEMPO_POUSO
-    global TEMPO_EMBARQUE_DESEMBARQUE
-    global TEMPO_ABASTECIMENTO
-    global TEMPO_DECOLAGEM
 
     # cria os aviões iniciais
     for i in range(qtd_avioes):
@@ -139,5 +132,3 @@ def configura_aeroporto(env, aeroporto, tempo_spawn, qtd_avioes, qtd_pistas, qtd
         yield env.timeout(random.randint(tempo_spawn-2, tempo_spawn+2))
         i += 1
         env.process(aviaoProc(env, 'Avião %d' % i, aeroporto))
-
-    pass
