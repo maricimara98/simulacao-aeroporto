@@ -22,3 +22,12 @@ graficamente.
 
 O cenário descrito deve ser simulado utilizando-se o SimPy.
 Para exemplos e tutoriais sobre o simulador SimPy, acesse: [Dicas sobre o Simpy](http://www.deinf.ufma.br/~mario/grad/avaldes/avaldes.html.)
+
+## Executando os testes
+
+Depois de instalar as dependências com `pip install -r requirements.txt`, execute:
+
+```bash
+pytest
+```
+
