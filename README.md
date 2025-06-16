@@ -22,3 +22,11 @@ graficamente.
 
 O cenário descrito deve ser simulado utilizando-se o SimPy.
 Para exemplos e tutoriais sobre o simulador SimPy, acesse: [Dicas sobre o Simpy](http://www.deinf.ufma.br/~mario/grad/avaldes/avaldes.html.)
+
+## Testes
+
+Para executar os testes unitários deste projeto utilize o `pytest`:
+
+```bash
+pytest
+```
