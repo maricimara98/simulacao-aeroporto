@@ -117,5 +117,3 @@ def log_simulacao(data):
     tempo_medio_fila_pistas(data, qtd_avioes)
     tempo_medio_fila_finges(data, qtd_avioes)
     tempo_medio_fila_bomba(data)
-
-    pass
