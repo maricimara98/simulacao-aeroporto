@@ -22,3 +22,21 @@ graficamente.
 
 O cenário descrito deve ser simulado utilizando-se o SimPy.
 Para exemplos e tutoriais sobre o simulador SimPy, acesse: [Dicas sobre o Simpy](http://www.deinf.ufma.br/~mario/grad/avaldes/avaldes.html.)
+
+## Como executar
+
+Este projeto foi testado com **Python 3.11**. Recomenda‑se utilizar um
+ambiente virtual para isolar as dependências. Um fluxo básico de execução é o
+seguinte:
+
+```bash
+# criar e ativar o ambiente virtual (opcional)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# instalar as dependências
+pip install -r requirements.txt
+
+# executar a simulação
+python main.py
+```
