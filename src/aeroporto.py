@@ -50,24 +50,18 @@ class Aeroporto:
         pass
 
     def procedimento(self, aviao, proc):
-        global VERBOSE_SERV
-
         tempo = 0
         if proc == 'pousar':
-            global TEMPO_POUSO
-            tempo = TEMPO_POUSO
+            tempo = self.tempo_pouso
 
         elif proc == 'abastecer':
-            global TEMPO_ABASTECIMENTO
-            tempo = TEMPO_ABASTECIMENTO
+            tempo = self.tempo_abastecimento
 
         elif proc == 'embarcar':
-            global TEMPO_EMBARQUE_DESEMBARQUE
-            tempo = TEMPO_EMBARQUE_DESEMBARQUE
+            tempo = self.tempo_embarque
 
         elif proc == 'decolar':
-            global TEMPO_DECOLAGEM
-            tempo = TEMPO_DECOLAGEM
+            tempo = self.tempo_decolagem
 
         yield self.env.timeout(tempo)
         if VERBOSE_SERV:
