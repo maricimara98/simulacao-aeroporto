@@ -120,7 +120,6 @@ def aviaoProc(env, nome, aeroporto):
 
     # Registrar métricas
     aeroporto.registrar_metrica(log_simulacao)
-    pass
 
 
 def configura_aeroporto(env, aeroporto, tempo_spawn, qtd_avioes, qtd_pistas, qtd_fingers, qtd_bombas):
@@ -140,4 +139,3 @@ def configura_aeroporto(env, aeroporto, tempo_spawn, qtd_avioes, qtd_pistas, qtd
         i += 1
         env.process(aviaoProc(env, 'Avião %d' % i, aeroporto))
 
-    pass
