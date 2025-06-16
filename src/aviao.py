@@ -111,11 +111,11 @@ def aviaoProc(env, nome, aeroporto):
               (nome, env.now))
     yield env.process(aeroporto.procedimento(nome, 'decolar'))
     if LOG_VERBOSE:
-        print('%s saiu da pista de pouso. Último contato feito às %.2f.' %
+        print('%s saiu da pista de decolagem. Último contato feito às %.2f.' %
               (nome, env.now))
 
     # LOG
-    log_simulacao['pista'] = pista['id']
+    log_simulacao['pista de decolagem'] = pista['id']
     yield aeroporto.pista.put(pista)  # libera a pista
 
     # Registrar métricas
