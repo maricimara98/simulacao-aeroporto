@@ -2,7 +2,13 @@
 # -*- coding: utf-8-sig -*-
 
 import simpy
-from src.globals import *
+from src.globals import (
+    VERBOSE_SERV,
+    TEMPO_POUSO,
+    TEMPO_ABASTECIMENTO,
+    TEMPO_EMBARQUE_DESEMBARQUE,
+    TEMPO_DECOLAGEM,
+)
 
 
 class Aeroporto:
@@ -50,23 +56,17 @@ class Aeroporto:
         pass
 
     def procedimento(self, aviao, proc):
-        global VERBOSE_SERV
-
         tempo = 0
         if proc == 'pousar':
-            global TEMPO_POUSO
             tempo = TEMPO_POUSO
 
         elif proc == 'abastecer':
-            global TEMPO_ABASTECIMENTO
             tempo = TEMPO_ABASTECIMENTO
 
         elif proc == 'embarcar':
-            global TEMPO_EMBARQUE_DESEMBARQUE
             tempo = TEMPO_EMBARQUE_DESEMBARQUE
 
         elif proc == 'decolar':
-            global TEMPO_DECOLAGEM
             tempo = TEMPO_DECOLAGEM
 
         yield self.env.timeout(tempo)
