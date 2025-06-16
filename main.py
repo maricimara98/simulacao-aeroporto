@@ -29,7 +29,8 @@ if __name__ == '__main__':
 
     # Configurar e iniciar a simulação
     print('Simulador Aeroporto')
-    random.seed(getSeed(RANDOM_SEED))   # semente do gerador de números aleatórios
+    # semente do gerador de números aleatórios
+    random.seed(RANDOM_SEED)
     env = simpy.Environment()			# cria o environment do modelo
     
     aeroporto = Aeroporto(env, QTD_PISTAS, QTD_FINGERS, QTD_BOMBAS,
