@@ -70,7 +70,7 @@ def tempo_medio_fila_pistas(data, qtd_avioes):
     print('Tempo médio de espera na fila para acesso a pista: %.2f min' % avg)
 
 
-def tempo_medio_fila_finges(data, qtd_avioes):
+def tempo_medio_fila_fingers(data, qtd_avioes):
     s = 0
     for d in data:
         s += time_dif(d['fila de desembarque'])
@@ -115,7 +115,7 @@ def log_simulacao(data):
 
     print('')
     tempo_medio_fila_pistas(data, qtd_avioes)
-    tempo_medio_fila_finges(data, qtd_avioes)
+    tempo_medio_fila_fingers(data, qtd_avioes)
     tempo_medio_fila_bomba(data)
 
     pass
