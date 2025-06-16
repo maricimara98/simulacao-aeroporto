@@ -115,7 +115,7 @@ def aviaoProc(env, nome, aeroporto):
               (nome, env.now))
 
     # LOG
-    log_simulacao['pista'] = pista['id']
+    log_simulacao['pista de decolagem'] = pista['id']
     yield aeroporto.pista.put(pista)  # libera a pista
 
     # Registrar métricas
