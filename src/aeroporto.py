@@ -31,7 +31,6 @@ class Aeroporto:
 
         # setup para iniciar filas
         self.init_queue(qtd_pistas, qtd_fingers, qtd_bombas)
-        pass
 
     def init_queue(self, qtd_pistas, qtd_fingers, qtd_bombas):
         for i in range(qtd_pistas):
@@ -43,11 +42,8 @@ class Aeroporto:
         for i in range(qtd_bombas):
             self.bomba.put({'id': i})
 
-        pass
-
     def registrar_metrica(self, entry):
         self.log_metricas.append(entry)
-        pass
 
     def procedimento(self, aviao, proc):
         global VERBOSE_SERV
@@ -72,6 +68,3 @@ class Aeroporto:
         yield self.env.timeout(tempo)
         if VERBOSE_SERV:
             print('Avião %s em procedimento de %s.' % (aviao, proc))
-        pass
-
-    pass
