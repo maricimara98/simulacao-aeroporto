@@ -2,19 +2,8 @@
 # -*- coding: utf-8-sig -*-
 
 import random
-import math
-from os import urandom
 
 from src.globals import *
-
-
-def getSeed(num):
-    if (type(num) != type(int)):
-        num = int(num)
-    random.seed(urandom(num))
-
-    return random.randint(0, 13)*math.pow(num, 3)
-
 
 def aviaoProc(env, nome, aeroporto):
 
