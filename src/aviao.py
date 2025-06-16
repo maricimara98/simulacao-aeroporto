@@ -5,7 +5,7 @@ import random
 import math
 from os import urandom
 
-from src.globals import *
+from src.globals import LOG_VERBOSE
 
 
 def getSeed(num):
@@ -28,8 +28,6 @@ def aviaoProc(env, nome, aeroporto):
         'finger': None,
         'bomba de combustivel': None,
     }
-
-    global LOG_VERBOSE
 
 # ---------------- Pouso ----------------
     # FILA
@@ -124,11 +122,6 @@ def aviaoProc(env, nome, aeroporto):
 
 
 def configura_aeroporto(env, aeroporto, tempo_spawn, qtd_avioes, qtd_pistas, qtd_fingers, qtd_bombas):
-
-    global TEMPO_POUSO
-    global TEMPO_EMBARQUE_DESEMBARQUE
-    global TEMPO_ABASTECIMENTO
-    global TEMPO_DECOLAGEM
 
     # cria os aviões iniciais
     for i in range(qtd_avioes):

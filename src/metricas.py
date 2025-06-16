@@ -1,7 +1,16 @@
 #!/usr/bin/python
 # -*- coding: utf-8-sig -*-
 
-from src.globals import *
+from src.globals import (
+    TEMPO_SIMULACAO,
+    TEMPO_POUSO,
+    TEMPO_ABASTECIMENTO,
+    TEMPO_EMBARQUE_DESEMBARQUE,
+    TEMPO_DECOLAGEM,
+    QTD_PISTAS,
+    QTD_FINGERS,
+    QTD_BOMBAS,
+)
 
 
 def separate_usage_by_id(data, field, qtd):
@@ -91,14 +100,6 @@ def tempo_medio_fila_bomba(data):
 
 
 def log_simulacao(data):
-    global TEMPO_SIMULACAO
-    global TEMPO_POUSO
-    global TEMPO_ABASTECIMENTO
-    global TEMPO_EMBARQUE_DESEMBARQUE
-    global TEMPO_DECOLAGEM
-    global QTD_PISTAS
-    global QTD_FINGERS
-    global QTD_BOMBAS
 
     qtd_avioes = len(data)
     throughput = qtd_avioes / (TEMPO_SIMULACAO/60)

@@ -2,9 +2,22 @@
 # -*- coding: utf-8-sig -*-
 
 import simpy  # biblioteca de simulação
-from src.globals import *
+import random
+from src.globals import (
+    RANDOM_SEED,
+    QTD_PISTAS,
+    QTD_FINGERS,
+    QTD_BOMBAS,
+    TEMPO_POUSO,
+    TEMPO_EMBARQUE_DESEMBARQUE,
+    TEMPO_ABASTECIMENTO,
+    TEMPO_DECOLAGEM,
+    TEMPO_SPAWN,
+    QTD_AVIOES,
+    TEMPO_SIMULACAO,
+)
 from src.aeroporto import Aeroporto
-from src.aviao import *
+from src.aviao import configura_aeroporto, getSeed
 import src.metricas as metricas
 
 """
