@@ -2,9 +2,12 @@
 # -*- coding: utf-8-sig -*-
 
 import simpy  # biblioteca de simulação
+import random
+
 from src.globals import *
 from src.aeroporto import Aeroporto
-from src.aviao import *
+from src.aviao import configura_aeroporto
+from src.utils import getSeed
 import src.metricas as metricas
 
 """
