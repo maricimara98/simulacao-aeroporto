@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8-sig -*-
 
+import logging
 import simpy  # biblioteca de simulação
 from src.globals import *
 from src.aeroporto import Aeroporto
@@ -27,8 +28,19 @@ Scenario:
 
 if __name__ == '__main__':
 
+    level = logging.WARNING
+    if LOG_VERBOSE:
+        level = logging.INFO
+    if VERBOSE_SERV:
+        level = logging.DEBUG
+    logging.basicConfig(
+        level=level,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
+    logger = logging.getLogger(__name__)
+
     # Configurar e iniciar a simulação
-    print('Simulador Aeroporto')
+    logger.info('Simulador Aeroporto')
     random.seed(getSeed(RANDOM_SEED))   # semente do gerador de números aleatórios
     env = simpy.Environment()			# cria o environment do modelo
     

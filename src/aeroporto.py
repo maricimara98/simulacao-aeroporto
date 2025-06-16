@@ -1,8 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8-sig -*-
 
+import logging
 import simpy
 from src.globals import *
+
+logger = logging.getLogger(__name__)
 
 
 class Aeroporto:
@@ -50,7 +53,6 @@ class Aeroporto:
         pass
 
     def procedimento(self, aviao, proc):
-        global VERBOSE_SERV
 
         tempo = 0
         if proc == 'pousar':
@@ -70,8 +72,7 @@ class Aeroporto:
             tempo = TEMPO_DECOLAGEM
 
         yield self.env.timeout(tempo)
-        if VERBOSE_SERV:
-            print('Avião %s em procedimento de %s.' % (aviao, proc))
+        logger.debug('Avião %s em procedimento de %s.', aviao, proc)
         pass
 
     pass

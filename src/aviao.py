@@ -1,11 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8-sig -*-
 
+import logging
 import random
 import math
 from os import urandom
 
 from src.globals import *
+
+logger = logging.getLogger(__name__)
 
 
 def getSeed(num):
@@ -29,23 +32,18 @@ def aviaoProc(env, nome, aeroporto):
         'bomba de combustivel': None,
     }
 
-    global LOG_VERBOSE
-
-# ---------------- Pouso ----------------
+    # ---------------- Pouso ----------------
     # FILA
-    if LOG_VERBOSE:
-        print('%s em primeiro contato com o aeroporto às %.2f. Aguardando autorização de pouso.' % (
-            nome, env.now))
+    logger.info('%s em primeiro contato com o aeroporto às %.2f. Aguardando autorização de pouso.',
+                nome, env.now)
     log_simulacao['fila de pouso'].append(env.now)  # fila de pouso
     pista = yield aeroporto.pista.get()  # pista livre
     log_simulacao['fila de pouso'].append(env.now)  # fila de pouso
 
     # SERVIÇO
-    if LOG_VERBOSE:
-        print('%s chegou à pista de pouso. Pouso às %.2f.' % (nome, env.now))
+    logger.info('%s chegou à pista de pouso. Pouso às %.2f.', nome, env.now)
     yield env.process(aeroporto.procedimento(nome, 'pousar'))
-    if LOG_VERBOSE:
-        print('%s saiu da pista de pouso às %.2f.' % (nome, env.now))
+    logger.info('%s saiu da pista de pouso às %.2f.', nome, env.now)
 
     # LOG
     log_simulacao['pista de pouso'] = pista['id']
@@ -56,21 +54,18 @@ def aviaoProc(env, nome, aeroporto):
     combustivel = random.randint(0, 100)
     if combustivel <= 65:
         # FILA
-        if LOG_VERBOSE:
-            print('%s requisitou reabastecimento às %.2f. Nível do combustível: %i/100.' %
-                  (nome, env.now, combustivel))
+        logger.info('%s requisitou reabastecimento às %.2f. Nível do combustível: %i/100.',
+                    nome, env.now, combustivel)
         log_simulacao['fila de abastecimento'].append(env.now)
         bomba = yield aeroporto.bomba.get()  # bomba livre
         log_simulacao['fila de abastecimento'].append(env.now)
 
         # SERVIÇO
-        if LOG_VERBOSE:
-            print('%s chegou ao posto de abastecimento às %.2f. Abastecendo o tanque.' % (
-                nome, env.now))
+        logger.info('%s chegou ao posto de abastecimento às %.2f. Abastecendo o tanque.',
+                    nome, env.now)
         yield env.process(aeroporto.procedimento(nome, 'abastecer'))
-        if LOG_VERBOSE:
-            print('%s está de tanque cheio. Saiu do posto de abastecimento às %.2f.' % (
-                nome, env.now))
+        logger.info('%s está de tanque cheio. Saiu do posto de abastecimento às %.2f.',
+                    nome, env.now)
 
         # LOG
         log_simulacao['bomba de combustivel'] = bomba['id']
@@ -79,18 +74,15 @@ def aviaoProc(env, nome, aeroporto):
 # ---------------- Desembarque/Embarque	----------------
 
     # FILA
-    if LOG_VERBOSE:
-        print('%s dirigindo-se à área de desembarque às %.2f.' % (nome, env.now))
+    logger.info('%s dirigindo-se à área de desembarque às %.2f.', nome, env.now)
     log_simulacao['fila de desembarque'].append(env.now)
     finger = yield aeroporto.finger.get()  # finger livre
     log_simulacao['fila de desembarque'].append(env.now)
 
     # SERVIÇO
-    if LOG_VERBOSE:
-        print('%s iniciou o embarque às %.2f.' % (nome, env.now))
+    logger.info('%s iniciou o embarque às %.2f.', nome, env.now)
     yield env.process(aeroporto.procedimento(nome, 'embarcar'))
-    if LOG_VERBOSE:
-        print('%s encerrou o embarque às %.2f.' % (nome, env.now))
+    logger.info('%s encerrou o embarque às %.2f.', nome, env.now)
 
     # LOG
     log_simulacao['finger'] = finger['id']
@@ -99,20 +91,17 @@ def aviaoProc(env, nome, aeroporto):
 # ---------------- Decolagem ----------------
 
     # FILA
-    if LOG_VERBOSE:
-        print('%s dirigindo-se à pista de decolagem às %.2f.' % (nome, env.now))
+    logger.info('%s dirigindo-se à pista de decolagem às %.2f.', nome, env.now)
     log_simulacao['fila de decolagem'].append(env.now)
     pista = yield aeroporto.pista.get()  # pista livre
     log_simulacao['fila de decolagem'].append(env.now)
 
     # SERVIÇO
-    if LOG_VERBOSE:
-        print('%s chegou à pista de decolagem. Início da decolagem às %.2f.' %
-              (nome, env.now))
+    logger.info('%s chegou à pista de decolagem. Início da decolagem às %.2f.',
+                nome, env.now)
     yield env.process(aeroporto.procedimento(nome, 'decolar'))
-    if LOG_VERBOSE:
-        print('%s saiu da pista de pouso. Último contato feito às %.2f.' %
-              (nome, env.now))
+    logger.info('%s saiu da pista de pouso. Último contato feito às %.2f.',
+                nome, env.now)
 
     # LOG
     log_simulacao['pista'] = pista['id']
